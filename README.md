@@ -65,11 +65,23 @@ choices used to train each to their reported accuracy.
 - CIFAR-10 is downloaded automatically by `torchvision.datasets.CIFAR10`
   the first time the notebook runs — no manual data setup needed (unlike
   the other repos in this portfolio, which depend on data files that
-  aren't included).
+  aren't included). This is the one notebook in this portfolio that
+  genuinely runs immediately after cloning, with no external data to
+  obtain first.
+- Verified directly in the saved notebook: `SAMPLE_DATA = False` at the
+  point these results were generated, meaning the reported accuracies
+  reflect training on the *full* CIFAR-10 dataset, not the smaller
+  fast-iteration subset the notebook supports for development.
 
 ## Running this code
 
-Requires Python with `torch`, `torchvision`, `matplotlib`, and `seaborn`.
-Open `cifar10_cnn_architectures.ipynb` in Jupyter or Colab (a GPU runtime
-is strongly recommended — training five CNNs on CPU is slow) and run all
-cells top to bottom; CIFAR-10 downloads automatically on first run.
+```
+pip install -r requirements.txt
+```
+
+Then open `cifar10_cnn_architectures.ipynb` in Jupyter or Colab (a GPU
+runtime is strongly recommended — training five CNNs on CPU is slow) and
+run all cells top to bottom; CIFAR-10 downloads automatically on first
+run. Dependency versions in `requirements.txt` are unpinned — the exact
+versions originally used weren't captured, so this lists package names
+only, not a locked environment.
